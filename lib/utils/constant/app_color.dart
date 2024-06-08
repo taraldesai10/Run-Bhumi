@@ -17,11 +17,9 @@ class AppColors {
 }
 
 class ColorRes {
-  static Color backgroundColor(BuildContext context) => context.theme.backgroundColor;
 
   static Color whiteTextColor(BuildContext context) => context.theme.cardColor;
 
-  static Color titleTextColor(BuildContext context) => context.theme.errorColor;
 
   // static Color headingRowColor(BuildContext context) => context.theme.accentColor;
   // static Color buttonColor(BuildContext context) => context.theme.cursorColor;
