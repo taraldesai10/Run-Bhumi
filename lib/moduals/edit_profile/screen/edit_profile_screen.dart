@@ -1,179 +1,107 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:run_bhumi/moduals/edit_personal_information/controller/edit_detail_screen_controller.dart';
-import 'package:run_bhumi/utils/constant/app_color.dart';
+import 'package:runbhumi_cricket/utils/theme.dart';
 
-class EditProfileScreen extends StatelessWidget {
-  EditProfileScreen({super.key});
-  final PersonalDetailEditController personalDetailEditController =
-      Get.put(PersonalDetailEditController());
+class EditProfileScreen extends StatefulWidget {
+  const EditProfileScreen({super.key});
+
+  @override
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
+}
+
+class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backGroundColor,
-      body: SafeArea(
-        child: Column(
-          children: [
-            // BookingAppBar(title:AppString.personalDetails, isNavigation:true,changeType: false),
-            // Padding(
-            //   padding:  EdgeInsets.symmetric(vertical: 12.h,horizontal: 18.w),
-            //   child: Column(
-            //     children: [
-            //       Container(
-            //         decoration: BoxDecoration(
-            //             border: Border(
-            //
-            //                 bottom: BorderSide(
-            //                     width: .5.w, color: AppColors.bottomsheetColor))),
-            //         child:Row(crossAxisAlignment: CrossAxisAlignment.center,children: [
-            //           Column(
-            //             crossAxisAlignment: CrossAxisAlignment.start,
-            //             children: [
-            //               AppText(
-            //                 text:AppString.name,
-            //                 textStyle: size10Medium(
-            //                     textColor: AppColors.subTileTextColor,
-            //                     fontWeight: FontWeight.w400),
-            //               ).paddingOnly(top: 12.h),Obx(() =>
-            //                   AppText(
-            //                     text: "${personalDetailEditController.firstNameText.value} ${personalDetailEditController.lastNameText.value}",
-            //                     textStyle: size14SemiBold(
-            //                         textColor: AppColors.whiteColor,
-            //                         fontWeight: FontWeight.w400),
-            //                   ).paddingOnly(top: 5.h,bottom: 12.h),)
-            //             ],
-            //           ),
-            //           const Spacer(),
-            //           GestureDetector(onTap:(){
-            //             Navigation.pushNamed(Routes.profileDetailEditScreen);
-            //           },
-            //             child: AppText(
-            //               text: AppString.edit,
-            //               textStyle: size12Medium(
-            //                   textColor: AppColors.whiteColor, fontWeight: FontWeight.w500),
-            //             ),
-            //           ),
-            //         ],),
-            //       ),
-            //       Container(
-            //         decoration: BoxDecoration(
-            //             border: Border(
-            //
-            //                 bottom: BorderSide(
-            //                     width: .5.w, color: AppColors.bottomsheetColor))),
-            //         child:Row(crossAxisAlignment: CrossAxisAlignment.center,children: [
-            //           Column(
-            //             crossAxisAlignment: CrossAxisAlignment.start,
-            //             children: [
-            //               AppText(
-            //                 text: AppString.phone,
-            //                 textStyle: size10Medium(
-            //                     textColor: AppColors.subTileTextColor,
-            //                     fontWeight: FontWeight.w400),
-            //               ).paddingOnly(top: 12.h),Obx(() =>
-            //                   AppText(
-            //                     text: personalDetailEditController.numberText.value,
-            //                     textStyle: size14SemiBold(
-            //                         textColor: AppColors.whiteColor,
-            //                         fontWeight: FontWeight.w400),
-            //                   ).paddingOnly(top: 5.h,bottom: 12.h),)
-            //             ],
-            //           ),
-            //           const Spacer(),
-            //           GestureDetector(onTap:(){
-            //             Navigation.pushNamed(Routes.profileDetailEditScreen);
-            //           },
-            //             child: AppText(
-            //
-            //               text: AppString.edit,
-            //               textStyle: size12Medium(
-            //                   textColor: AppColors.whiteColor, fontWeight: FontWeight.w500),
-            //             ),
-            //           ),
-            //         ],),
-            //       ),
-            //       Container(
-            //         decoration: BoxDecoration(
-            //             border: Border(
-            //
-            //                 bottom: BorderSide(
-            //                     width: .5.w, color: AppColors.bottomsheetColor))),
-            //         child:Row(crossAxisAlignment: CrossAxisAlignment.center,children: [
-            //           Column(
-            //             crossAxisAlignment: CrossAxisAlignment.start,
-            //             children: [
-            //               AppText(
-            //                 text:AppString.email ,
-            //                 textStyle: size10Medium(
-            //                     textColor: AppColors.subTileTextColor,
-            //                     fontWeight: FontWeight.w400),
-            //               ).paddingOnly(top: 12.h),Obx(() =>
-            //                   AppText(
-            //                     text: personalDetailEditController.emailText.value ,
-            //                     textStyle: size14SemiBold(
-            //                         textColor: AppColors.whiteColor,
-            //                         fontWeight: FontWeight.w400),
-            //                   ).paddingOnly(top: 5.h,bottom: 12.h),)
-            //             ],
-            //           ),
-            //           const Spacer(),
-            //           GestureDetector(onTap:(){
-            //             Navigation.pushNamed(Routes.profileDetailEditScreen);
-            //           },
-            //             child: AppText(
-            //               text:AppString.edit,
-            //               textStyle: size12Medium(
-            //                   textColor: AppColors.whiteColor, fontWeight: FontWeight.w500),
-            //             ),
-            //           ),
-            //         ],),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-          ],
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(
+            "Edit Profile",
+            style: TextStyle(fontSize: 15),
+          ),
         ),
-      ),
-    );
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Stack(
+                  alignment: Alignment(0.9, 0.9),
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: mainThemeColor),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.camera_alt,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Text("Name"),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                //
+                cursorColor: mainThemeColor,
+                keyboardType: TextInputType.text,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      width: 2,
+                      color: mainThemeColor,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      width: 2,
+                      color: mainThemeColor,
+                    ),
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Text("Phone Number"),
+              ),
+              TextFormField(
+                //
+                cursorColor: mainThemeColor,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      width: 2,
+                      color: mainThemeColor,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(
+                      width: 2,
+                      color: mainThemeColor,
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ));
   }
-// Widget  editBox(String t, String n){
-//
-//
-//  return   Container(
-//       decoration: BoxDecoration(
-//           border: Border(
-//
-//               bottom: BorderSide(
-//                   width: .5.w, color: AppColors.bottomsheetColor))),
-//       child:Row(crossAxisAlignment: CrossAxisAlignment.center,children: [
-//         Column(
-//           crossAxisAlignment: CrossAxisAlignment.start,
-//           children: [
-//             AppText(
-//               text: t,
-//               textStyle: size10Medium(
-//                   textColor: AppColors.subTileTextColor,
-//                   fontWeight: FontWeight.w400),
-//             ).paddingOnly(top: 12.h),
-//             AppText(
-//               text: n,
-//               textStyle: size14SemiBold(
-//                   textColor: AppColors.whiteColor,
-//                   fontWeight: FontWeight.w400),
-//             ).paddingOnly(top: 5.h,bottom: 12.h),
-//           ],
-//         ),
-//         const Spacer(),
-//         GestureDetector(onTap:(){
-//           Navigation.pushNamed(Routes.profileDetailEditScreen);
-//         },
-//           child: AppText(
-//             text: AppString.edit,
-//             textStyle: size12Medium(
-//                 textColor: AppColors.whiteColor, fontWeight: FontWeight.w500),
-//           ),
-//         ),
-//       ],),
-//     );
-//   }
 }

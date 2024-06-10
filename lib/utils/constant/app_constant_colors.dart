@@ -13,4 +13,5 @@ class AppColor {
   static const Color tabDeactiveColour = Color(0xffB6B6B6);
   static const Color grey = Color(0xff8990A0);
   static const Color white = Color(0xffFAFAFA);
+  static const Color mainColor = Color(0xff005aa5);
 }

@@ -1,8 +1,7 @@
-enum FlightType {
-  Origin,
-  Destination,
+
+enum SlotStatus {
+  Available,
+  Selected,
+  Processing,
+  Booked,
 }
-
-enum FlightDateType { FromrDate, ToDate }
-
-enum DataSelectType { isFromOneWay, isFromRoundTrip, isFromMultiCity, none }
