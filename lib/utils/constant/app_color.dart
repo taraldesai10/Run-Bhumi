@@ -12,23 +12,25 @@ class AppColors {
   static const Color deactiveButtonColour = Color(0xff6C6C6B);
   static const Color tabDeactiveColour = Color(0xffB6B6B6);
   static const Color trasparentColor = Colors.transparent;
+  static const Color themeMainColer = Color(0xff005aa5);
   static const Color redColor = Colors.red;
-
 }
 
 class ColorRes {
-  static Color backgroundColor(BuildContext context) => context.theme.backgroundColor;
+  // static Color backgroundColor(BuildContext context) => context.theme.backgroundColor;
 
   static Color whiteTextColor(BuildContext context) => context.theme.cardColor;
 
-  static Color titleTextColor(BuildContext context) => context.theme.errorColor;
+  // static Color titleTextColor(BuildContext context) => context.theme.errorColor;
 
   // static Color headingRowColor(BuildContext context) => context.theme.accentColor;
   // static Color buttonColor(BuildContext context) => context.theme.cursorColor;
   // static Color dropDownColor(BuildContext context) => context.theme.buttonColor;
-  static Color textFieldColor(BuildContext context) => context.theme.disabledColor;
+  static Color textFieldColor(BuildContext context) =>
+      context.theme.disabledColor;
   static Color camaraColor(BuildContext context) => context.theme.shadowColor;
   static Color retakeColor(BuildContext context) => context.theme.canvasColor;
-  static Color confirmButtonColor(BuildContext context) => context.theme.bottomAppBarColor;
-  static Color splashColor(BuildContext context) => context.theme.scaffoldBackgroundColor;
+  // static Color confirmButtonColor(BuildContext context) => context.theme.bottomAppBarColor;
+  static Color splashColor(BuildContext context) =>
+      context.theme.scaffoldBackgroundColor;
 }

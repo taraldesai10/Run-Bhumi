@@ -18,22 +18,29 @@ class SplashScreen extends StatelessWidget {
       value: SystemUiOverlayStyle(
         statusBarColor: AppColors.trasparentColor,
       ),
-      child: Column(
-        children: [
-          // Expanded(
-          //   child: Container(
-          //     height: double.infinity,
-          //     width: double.infinity,
-          //     alignment: Alignment.center,
-          //     color: AppColors.backGroundColor,
-          //     child:SvgPicture.asset(
-          //       height: 75.w,
-          //       width: 75.w,
-          //       AppImages.appLogo,
-          //     ),
-          //   ),
-          // ),
-        ],
+      child: Center(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              colors: [
+                Colors.orange.shade300,
+                Colors.blue.shade300,
+              ],
+            ),
+            image: const DecorationImage(
+                image: AssetImage(
+                  "assets/images/splash_image.png",
+                ),
+                fit: BoxFit.cover),
+          ),
+          child: Image.asset(
+            "assets/logo/run_bhoomi_logo.png",
+          ),
+        ),
       ),
     ));
   }

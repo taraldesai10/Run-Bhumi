@@ -44,7 +44,6 @@ class Routes {
       name: editProfileScreen,
       page: () => EditProfileScreen(),
     ),
-
     GetPage<dynamic>(
       name: otpVerificationScreen,
       page: () => OtpVerificationScreen(),
@@ -57,5 +56,9 @@ class Routes {
       name: personalDetailsScreen,
       page: () => PersonalDetailsScreen(),
     ),
+    // GetPage<dynamic>(
+    //   name: bottomNavBarScreen,
+    //   page: () => BottomnavBarScreen(),
+    // ),
   ];
 }
