@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:lottie/lottie.dart';
+import 'package:run_bhumi/moduals/select_city/screen/select_city_screen.dart';
+import 'package:run_bhumi/utils/constant/app_constant_colors.dart';
+import 'package:run_bhumi/utils/constant/app_constant_images.dart';
+import 'package:run_bhumi/utils/constant/app_string.dart';
 
 class SuccessScreen extends StatefulWidget {
   const SuccessScreen({super.key});
@@ -23,23 +28,23 @@ class _SuccessScreenState extends State<SuccessScreen> {
                 height: 120,
                 width: 120,
                 child: Lottie.asset(
-                  "assets/lottie/success.json",
+                AppImages.successImage,
                   fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(
                 height: 30,
               ),
-              Text(
-                "Success!",
+              const Text(
+             AppString.success,
                 style: TextStyle(
                   fontSize: 17,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 50),
+              const Padding(
+                padding: EdgeInsets.only(top: 20, bottom: 50),
                 child: Text(
-                  "Congratulation! You have been Successfully authenticated",
+                AppString.successTitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -51,8 +56,8 @@ class _SuccessScreenState extends State<SuccessScreen> {
                 width: double.infinity,
                 height: 75,
                 child: ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(mainThemeColor),
+                  style: const ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(AppColor.mainColor),
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -62,8 +67,8 @@ class _SuccessScreenState extends State<SuccessScreen> {
                       ),
                     );
                   },
-                  child: Text(
-                    "Continue",
+                  child: const Text(
+                    AppString.continue1,
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,

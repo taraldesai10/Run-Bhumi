@@ -1,5 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:run_bhumi/moduals/bottom_navigation_bar/screen/bottom_navigation_bar_screen.dart';
+import 'package:run_bhumi/moduals/select_city/controller/select_city_controller.dart';
+import 'package:run_bhumi/utils/constant/app_string.dart';
+import 'package:run_bhumi/utils/constant/veriables.dart';
 
 class SelectCityScreen extends StatefulWidget {
   const SelectCityScreen({super.key});
@@ -9,6 +14,7 @@ class SelectCityScreen extends StatefulWidget {
 }
 
 class _SelectCityScreenState extends State<SelectCityScreen> {
+  SelectCityController selectCityController = Get.put(SelectCityController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +22,7 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
         shadowColor: Colors.black,
         centerTitle: true,
         title: const Text(
-          "Select City",
+         AppString.selectCity,
           style: TextStyle(fontSize: 15),
         ),
         actions: [
@@ -33,7 +39,7 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
             padding: EdgeInsets.symmetric(vertical: 30),
             child: Center(
               child: Text(
-                "All Cities",
+                AppString.allCities,
                 style: TextStyle(
                   fontSize: 13,
                 ),
@@ -42,7 +48,7 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: cities.length,
+              itemCount: selectCityController.cities.length,
               itemBuilder: (context, index) => Padding(
                 padding:
                 const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -54,7 +60,7 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
-                            selectedCity = cities[index].toString();
+                            selectedCity = selectCityController.cities[index].toString();
                           });
                           Navigator.pushReplacement(
                               context,
@@ -63,7 +69,7 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
                               ));
                         },
                         child: Text(
-                          cities[index],
+                          selectCityController.cities[index],
                         ),
                       ),
                     ),

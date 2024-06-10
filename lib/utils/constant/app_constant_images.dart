@@ -14,11 +14,13 @@ class AppImages {
   static const String splashImage = '${imageBasePath}splash_image.png';
   static const String runBhumiLogo = '${imageBasePath}run_bhumi_logo.png';
   static const String loginImage = '${imageBasePath}login_logo.png';
-
+  static const String otpScreenImage = "${imageBasePath}otp_screen_logo.png";
+  static const String profileImage = '${imageBasePath}profile.png';
   //=====================================Icons===========================================
-
+  static const String drawerIcon  ='${iconsBasePath}drawer.png';
 
 
   //==============================lottie========================================
+  static const String successImage  = '${lottieBasePath}success.json';
 
 }

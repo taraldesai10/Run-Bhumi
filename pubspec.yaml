@@ -51,6 +51,7 @@ dependencies:
   lottie: ^3.0.0
   rxdart:
   get_it: ^7.7.0
+  firebase_auth: 
 
 dev_dependencies:
   flutter_test:

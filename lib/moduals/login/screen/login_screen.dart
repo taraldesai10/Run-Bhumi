@@ -36,7 +36,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 const Padding(
                   padding: EdgeInsets.only(top: 20, bottom: 40),
                   child: Text(
-                   ,
+                    AppString.loginTitle,
                     style: TextStyle(
                       color: Colors.grey,
                     ),
@@ -49,13 +49,13 @@ class _LogInScreenState extends State<LogInScreen> {
                   cursorColor: AppColor.mainColor,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    label: Text(
-                      "Phone Number",
+                    label: const Text(
+                     AppString.phoneNumber ,
                       style: TextStyle(color: AppColor.mainColor),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         width: 2,
                         color: AppColor.mainColor,
                       ),

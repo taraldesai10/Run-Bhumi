@@ -2,8 +2,15 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:pinput/pinput.dart';
+import 'package:run_bhumi/moduals/otp_verify_screen/controller/otp_verification_controller.dart';
+import 'package:run_bhumi/moduals/otp_verify_screen/widget/pinput.dart';
+import 'package:run_bhumi/moduals/success/screen/success_screen.dart';
+import 'package:run_bhumi/utils/constant/app_constant_colors.dart';
+import 'package:run_bhumi/utils/constant/app_constant_images.dart';
+import 'package:run_bhumi/utils/constant/app_string.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
   const OtpVerificationScreen({super.key, this.otp});
@@ -15,30 +22,8 @@ class OtpVerificationScreen extends StatefulWidget {
 class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   @override
   Widget build(BuildContext context) {
-    final defaultPinTheme = PinTheme(
-      width: 70,
-      height: 60,
-      textStyle: const TextStyle(
-          fontSize: 20,
-          color: Color.fromRGBO(30, 60, 87, 1),
-          fontWeight: FontWeight.w600),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade300, width: 1.5),
-        borderRadius: BorderRadius.circular(20),
-      ),
-    );
 
-    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
-      border: Border.all(color: mainThemeColor, width: 2),
-      borderRadius: BorderRadius.circular(20),
-    );
-
-    final submittedPinTheme = defaultPinTheme.copyWith(
-      decoration: defaultPinTheme.decoration?.copyWith(
-        color: const Color.fromRGBO(234, 239, 243, 1),
-      ),
-    );
-    String code = "";
+   OtpVerificationController otpVerificationController = Get.put(OtpVerificationController());
     return Scaffold(
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: false,
@@ -64,7 +49,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Verification Code",
+           AppString.verificationCode,
                   style: TextStyle(fontSize: 18),
                 ),
                 const SizedBox(
@@ -73,7 +58,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 const Padding(
                   padding: EdgeInsets.only(top: 5, bottom: 40),
                   child: Text(
-                    "We have sent the verification code to your phone number",
+                   AppString.otpVerificationTitle,
                     style: TextStyle(
                       color: Colors.grey,
                     ),
@@ -82,11 +67,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 Center(
                   child: Pinput(
                     length: 6,
-                    defaultPinTheme: defaultPinTheme,
-                    focusedPinTheme: focusedPinTheme,
-                    submittedPinTheme: submittedPinTheme,
+                    defaultPinTheme: OtpPinput.defaultPinTheme,
+                    focusedPinTheme:OtpPinput.focusedPinTheme,
+                    submittedPinTheme: OtpPinput.submittedPinTheme,
                     onChanged: (value) {
-                      code = value;
+                      otpVerificationController.code = value;
                     },
                     showCursor: true,
                     onCompleted: (pin) => log(pin),
@@ -99,8 +84,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   width: double.infinity,
                   height: 75,
                   child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(mainThemeColor),
+                    style: const ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(AppColor.mainColor),
                     ),
                     onPressed: () async {
                       //
@@ -117,7 +102,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                           ));
                     },
                     child: const Text(
-                      "confirm",
+                    AppString.confirm,
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.white,
@@ -132,7 +117,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Didn't get the OTP? ",
+              AppString.didNtGetOtp,
                       style: TextStyle(
                         fontSize: 9,
                       ),
@@ -146,7 +131,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     ),
                   ],
                 ),
-                Image.asset("assets/images/otp_screen_logo.png")
+                Image.asset(AppImages.otpScreenImage)
               ],
             ),
           ),

@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:run_bhumi/moduals/home/controller/home_screen_controller.dart';
 import 'package:run_bhumi/moduals/home/widget/drawer.dart';
 import 'package:run_bhumi/moduals/search_all_category/screen/search_all_category_screen.dart';
+import 'package:run_bhumi/utils/constant/app_constant_colors.dart';
+import 'package:run_bhumi/utils/constant/app_constant_images.dart';
+import 'package:run_bhumi/utils/constant/veriables.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,11 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
               _scaffoldKey.currentState!.openDrawer();
             },
             child: Image.asset(
-              "assets/icons/textalign-right.png",
+            AppImages.drawerIcon,
             ),
           ),
           title: Text(
-            homeScreenController.selectedCity,
+         selectedCity,
             style: const TextStyle(fontSize: 12),
           ),
           actions: [
@@ -49,11 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
               margin: const EdgeInsets.only(right: 20),
               height: 60,
               width: 60,
-              decoration: BoxDecoration(
-                color: mainThemeColor,
+              decoration: const BoxDecoration(
+                color: AppColor.mainColor,
                 shape: BoxShape.circle,
-                image: const DecorationImage(
-                  image: AssetImage("assets/images/profile.png"),
+                image: DecorationImage(
+                  image: AssetImage(AppImages.profileImage),
                 ),
               ),
             )
