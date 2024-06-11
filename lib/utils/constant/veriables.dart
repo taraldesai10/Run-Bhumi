@@ -1,3 +1,4 @@
+
 import 'package:get/get.dart';
 
 class CommonVariables extends GetxController{
@@ -5,3 +6,4 @@ class CommonVariables extends GetxController{
   List<Map> boxFavorite = [];
 
 }
+

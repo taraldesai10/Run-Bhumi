@@ -3,7 +3,6 @@ import 'dart:developer';
 
 import 'package:http_interceptor/http_interceptor.dart';
 
-
 class LoggerInterceptor implements InterceptorContract {
   @override
   Future<RequestData> interceptRequest({required RequestData data}) async {

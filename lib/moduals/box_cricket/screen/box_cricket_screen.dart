@@ -4,6 +4,7 @@ import 'package:run_bhumi/moduals/box_cricket/controller/box_cricket_controller.
 import 'package:run_bhumi/moduals/box_favorite/screen/box_favorite_screen.dart';
 import 'package:run_bhumi/widget/common_search_box.dart';
 
+
 class BoxCricketScreen extends StatefulWidget {
   const BoxCricketScreen({super.key});
 
@@ -73,6 +74,7 @@ class _BoxCricketScreenState extends State<BoxCricketScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: GridView.builder(
                 itemCount: boxCricketController.boxCricket.length,
+
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.7,
@@ -118,6 +120,7 @@ class _BoxCricketScreenState extends State<BoxCricketScreen> {
                             ),
                             Text(
                               boxCricketController.boxCricket[index]["ratting"].toString(),
+
                               style: const TextStyle(
                                 fontSize: 10,
                                 color: Colors.white,

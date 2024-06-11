@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import 'package:run_bhumi/moduals/search_all_category/controller/search_all_category_controller.dart';
 import 'package:run_bhumi/moduals/search_all_category/widget/popular.dart';
 import 'package:run_bhumi/utils/constant/app_constant_colors.dart';
 import 'package:run_bhumi/utils/constant/veriables.dart';
 import 'package:run_bhumi/widget/common_search_box.dart';
+
 
 class SearchAllCategoryScreen extends StatefulWidget {
   const SearchAllCategoryScreen({super.key});
@@ -33,15 +35,19 @@ class _SearchAllCategoryScreenState extends State<SearchAllCategoryScreen>
     );
     _startAutoSlide();
   }
+
 CommonVariables commonVariables = Get.put(CommonVariables());
   SearchAllCategoryController searchAllCategoryController = Get.put(SearchAllCategoryController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
+
           commonVariables.selectedCity,
+
           style: const TextStyle(fontSize: 15),
         ),
       ),
@@ -53,7 +59,9 @@ CommonVariables commonVariables = Get.put(CommonVariables());
               padding: const EdgeInsets.symmetric(
                 horizontal: 30,
               ),
+
               child: searchBox(context, searchAllCategoryController.txtSearch),
+
             ),
             const Padding(
               padding: EdgeInsets.symmetric(
@@ -70,12 +78,16 @@ CommonVariables commonVariables = Get.put(CommonVariables());
                   width: double.infinity,
                   decoration: BoxDecoration(
                       border: Border.all(
+
                         color: AppColor.mainColor,
+
                       ),
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
                         image: AssetImage(
+
                           searchAllCategoryController.images[searchAllCategoryController.currentImageIndex],
+
                         ),
                         fit: BoxFit.cover,
                       )),
@@ -102,7 +114,9 @@ CommonVariables commonVariables = Get.put(CommonVariables());
     Future.delayed(const Duration(seconds: 10)).then((_) {
       if (mounted) {
         setState(() {
+
           searchAllCategoryController.currentImageIndex = (searchAllCategoryController.currentImageIndex + 1) % searchAllCategoryController.images.length;
+
         });
         _startAutoSlide();
       }

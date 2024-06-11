@@ -6,6 +6,7 @@ import 'package:run_bhumi/utils/constant/app_constant_colors.dart';
 import 'package:run_bhumi/widget/common_search_box.dart';
 
 
+
 class CricketGround extends StatefulWidget {
   const CricketGround({super.key});
 
@@ -14,7 +15,8 @@ class CricketGround extends StatefulWidget {
 }
 
 class _CricketGroundState extends State<CricketGround> {
-CricketGroundController cricketGroundController = Get.put(CricketGroundController());
+final CricketGroundController cricketGroundController = Get.put(CricketGroundController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,12 +60,14 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
               )
                   : searchBox(context, cricketGroundController.txtSearch),
             ),
+
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: GridView.builder(
                 itemCount: cricketGroundController.cricketGround.length,
+
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 0.7,
@@ -94,6 +98,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                           image: DecorationImage(
                             image: AssetImage(
                               cricketGroundController.cricketGround[index]["image"],
+
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -109,6 +114,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                             ),
                             Text(
                             cricketGroundController.cricketGround[index]["ratting"].toString(),
+
                               style: const TextStyle(
                                 fontSize: 10,
                                 color: Colors.white,
@@ -132,6 +138,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                                 ),
                                 Text(
                                   cricketGroundController.cricketGround[index]["location"],
+
                                   style: TextStyle(
                                     color: Colors.orange[800],
                                     fontSize: 7,
@@ -141,6 +148,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                             ),
                             Text(
                               cricketGroundController.cricketGround[index]["title"],
+
                               style: const TextStyle(
                                 fontSize: 11,
                               ),
@@ -150,6 +158,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                               children: [
                                 Text(
                                   "₹${cricketGroundController.cricketGround[index]["price"].toString()}",
+
                                   style: const TextStyle(
                                     fontSize: 11,
                                   ),
@@ -182,6 +191,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                                         boxsize: cricketGroundController.cricketGround[index]
                                         ["boxsize"],
                                         link: cricketGroundController.cricketGround[index]["link"],
+
                                         // index: index,
                                       ),
                                     ));
@@ -191,6 +201,7 @@ CricketGroundController cricketGroundController = Get.put(CricketGroundControlle
                                 height: 35,
                                 decoration: BoxDecoration(
                                   color: AppColor.mainColor,
+
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: const Text(

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:run_bhumi/moduals/bottom_navigation_bar/screen/bottom_navigation_bar_screen.dart';
 import 'package:run_bhumi/moduals/select_city/controller/select_city_controller.dart';
+
 import 'package:run_bhumi/utils/common_functions.dart';
+
 import 'package:run_bhumi/utils/constant/app_string.dart';
 import 'package:run_bhumi/utils/constant/veriables.dart';
 
@@ -15,7 +17,9 @@ class SelectCityScreen extends StatefulWidget {
 }
 
 class _SelectCityScreenState extends State<SelectCityScreen> {
+
   CommonVariables commonVariables = Get.put(CommonVariables());
+
   SelectCityController selectCityController = Get.put(SelectCityController());
   @override
   Widget build(BuildContext context) {
@@ -62,7 +66,9 @@ class _SelectCityScreenState extends State<SelectCityScreen> {
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
+
                             commonVariables.selectedCity = selectCityController.cities[index].toString();
+
                           });
                           Navigator.pushReplacement(
                               context,
